@@ -527,7 +527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 364347385}
-  jumpForce: 50
+  jumpForce: 250
   playerID: 0
 --- !u!212 &364347382
 SpriteRenderer:
@@ -741,7 +741,7 @@ GameObject:
   - component: {fileID: 1685084513}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

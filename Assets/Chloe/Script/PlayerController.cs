@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float jumpForce;
     [SerializeField] private int playerID = 0;
+    private bool isJumping = false;
 
     private void Start()
     {
@@ -17,14 +18,23 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if (player.GetButtonDown("Jump")){
-            rb.AddForce(Vector3.up * jumpForce);
+        if (player.GetButtonDown("Jump") && !isJumping){
+            rb.AddForce(Vector2.up * jumpForce);
+            isJumping = true;
         }
         
         // if (player.GetButtonDown("Crouch")){
             
         // }
     }
+
+    private void OnCollisionEnter2D(Collision2D col){
+        if (col.gameObject.tag == "Ground" && isJumping){
+            isJumping = false;
+        }
+        Debug.Log("OnCollisionEnter2D");
+    }
+
 }
