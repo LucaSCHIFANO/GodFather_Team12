@@ -133,9 +133,10 @@ GameObject:
   m_Component:
   - component: {fileID: 923710184}
   - component: {fileID: 923710183}
+  - component: {fileID: 923710185}
   m_Layer: 0
   m_Name: Dragon
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -207,6 +208,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &923710185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923710182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69b440437ef5a6c45b16619dd453549f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  playerID: 0
 --- !u!1 &945081510
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,7 +403,10 @@ MonoBehaviour:
       _startPlaying: 1
       _defaultJoystickMaps: []
       _defaultMouseMaps: []
-      _defaultKeyboardMaps: []
+      _defaultKeyboardMaps:
+      - _enabled: 1
+        _categoryId: 0
+        _layoutId: 0
       _defaultCustomControllerMaps: []
       _startingCustomControllers: []
       _assignMouseOnStart: 1
@@ -403,9 +421,9 @@ MonoBehaviour:
         _ruleSets: []
     actions:
     - _id: 0
-      _name: Move_horizontal
+      _name: Vertical
       _type: 0
-      _descriptiveName: Move_horizontal
+      _descriptiveName: Vertical
       _positiveDescriptiveName: Move_Up
       _negativeDescriptiveName: Move_Down
       _behaviorId: 0
