@@ -1,18 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Rewired;
 
 public class drag_moove : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Rigidbody2D rigidbody;
+
+    [SerializeField] private float speed;
+
+
+    [SerializeField]private int playerID = 0 ;
+    [SerializeField]private Player player;
+
+
+     void Start()
     {
-        
+        player = ReInput.players.GetPlayer(playerID);
+        rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        float moveVertical = player.GetAxis("Vertical");
+
+        rigidbody.velocity = new Vector2(0, moveVertical);
     }
 }
