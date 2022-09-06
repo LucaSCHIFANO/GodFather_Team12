@@ -5,6 +5,8 @@ using Rewired;
 
 public class drag_moove : MonoBehaviour
 {
+    public projectile Projectile;
+
     private Rigidbody2D rigidbody;
 
     [SerializeField] private float speed;
