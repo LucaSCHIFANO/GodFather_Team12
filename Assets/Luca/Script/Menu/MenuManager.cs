@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class MenuManager : MonoBehaviour
@@ -30,8 +31,19 @@ public class MenuManager : MonoBehaviour
 
     private void showController()
     {
-        
-        if(playerReady[0]) playerReadyVisu[0].SetActive(true);
-        if (playerReady[1]) playerReadyVisu[1].SetActive(true);
+        var number = 0;
+        if (playerReady[0])
+        {
+            playerReadyVisu[0].SetActive(true);
+            number++;
+        }
+
+        if (playerReady[1])
+        {
+            playerReadyVisu[1].SetActive(true);
+            number++;
+        }
+
+        if (number == 2) SceneManager.LoadScene("Luca/SceneLuca", LoadSceneMode.Single);
     }
 }
