@@ -12,7 +12,7 @@ public class HP : MonoBehaviour
         curretnHP = maxHP;
     }
 
-    virtual protected void removeHP(float hpToRemove)
+    virtual public void removeHP(float hpToRemove)
     {
         curretnHP -= hpToRemove;
         if (curretnHP <= 0)
