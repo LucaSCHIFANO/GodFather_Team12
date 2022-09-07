@@ -73,6 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedH: 3
   speedV: 0
+  timeBeforeDelete: 10
 --- !u!1001 &257995769777697563
 PrefabInstance:
   m_ObjectHideFlags: 0
