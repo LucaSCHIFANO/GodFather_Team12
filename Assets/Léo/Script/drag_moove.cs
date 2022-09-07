@@ -5,6 +5,8 @@ using Rewired;
 
 public class drag_moove : MonoBehaviour
 {
+    public GameOver GameOver;
+
     public projectile projectilePrefab;
     public Transform LaunchOffSet;
  
