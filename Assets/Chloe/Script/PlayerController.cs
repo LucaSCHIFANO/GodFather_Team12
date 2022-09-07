@@ -41,8 +41,9 @@ public class PlayerController : MonoBehaviour
         if (currentParent != null)
         {
             moveHorizontal = (moveHorizontal * speed) + currentParentRB.velocity.x;
-        }
-
+        } else{
+            moveHorizontal = moveHorizontal * speed;
+        } 
         rb.velocity = new Vector2(moveHorizontal,rb.velocity.y);
 
         if (player.GetButtonDown("Jump") && onGround){
