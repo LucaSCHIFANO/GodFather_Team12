@@ -583,8 +583,10 @@ MonoBehaviour:
   col: {fileID: 364347384}
   jumpForce: 250
   speed: 3
-  dashSpeed: 2000
-  isJumping: 0
+  dashPower: 12
+  onGround: 0
+  dashingTime: 0.2
+  dashingCooldown: 0.5
   currentParent: {fileID: 0}
 --- !u!212 &364347382
 SpriteRenderer:

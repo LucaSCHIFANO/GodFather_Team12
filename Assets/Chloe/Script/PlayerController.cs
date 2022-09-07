@@ -12,9 +12,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce;
     [SerializeField] private float speed;
     private int playerID = 0;
-    [SerializeField] private int dashSpeed;
-    [SerializeField]private bool isJumping = false;
+    [SerializeField] private float dashPower = 24f;
+    [SerializeField]private bool onGround = false;
     private int lastDirection = 1; // 1 = droite, -1 = gauche
+    private bool isDashing = false;
+    [SerializeField] private float dashingTime = 0.2f;
+    [SerializeField] private float dashingCooldown = 1f;
+    private bool canDash = true;
 
     public GameObject currentParent;
     private Rigidbody2D currentParentRB;
@@ -26,6 +30,10 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+
+        if (isDashing){
+            return;
+        }
         float moveHorizontal = player.GetAxis("Move Horizontal");
         if (moveHorizontal != 0){
             lastDirection = moveHorizontal > 0 ? 1: -1 ;
@@ -33,17 +41,19 @@ public class PlayerController : MonoBehaviour
         if (currentParent != null)
         {
             moveHorizontal = (moveHorizontal * speed) + currentParentRB.velocity.x;
-        }
-
+        } else{
+            moveHorizontal = moveHorizontal * speed;
+        } 
         rb.velocity = new Vector2(moveHorizontal,rb.velocity.y);
 
-        if (player.GetButtonDown("Jump") && !isJumping){
+        if (player.GetButtonDown("Jump") && onGround){
             rb.AddForce(Vector2.up * jumpForce);
-            isJumping = true;
+            onGround = false;
             currentParent = null;
         }
 
-        if(player.GetButtonDown("Dash")){
+        if(player.GetButtonDown("Dash") && canDash){
+            StartCoroutine(Dash());
         }
     }
 
@@ -54,13 +64,25 @@ public class PlayerController : MonoBehaviour
             {
                 currentParent = col.gameObject;
                 currentParentRB = currentParent.GetComponent<Rigidbody2D>();
-
             }
 
-            if (isJumping)
+            if (!onGround)
             {
-                isJumping = false;
+                onGround = true;
             }
         }
+    }
+
+    private IEnumerator Dash(){
+        canDash = false;
+        isDashing = true;
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        rb.velocity = new Vector2(transform.localScale.x * dashPower * lastDirection, 0f);
+        yield return new WaitForSeconds(dashingTime);
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;    
     }
 }

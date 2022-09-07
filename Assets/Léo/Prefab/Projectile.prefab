@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7366363960088854960}
   - component: {fileID: 7366363960088854974}
   - component: {fileID: 5423606771469955048}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Projectile
   m_TagString: projectile
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.15
+  m_Radius: 0.25
 --- !u!50 &7366363960088854974
 Rigidbody2D:
   serializedVersion: 4

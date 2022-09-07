@@ -17,9 +17,10 @@ public class projectile : MonoBehaviour
         if (collision.gameObject.tag == "BreakableWall")
         {
             collision.gameObject.GetComponent<HPBlock>().removeHP(dgt);
+            Destroy(gameObject);
         }
-
-        Destroy(gameObject);
+        
+        if(collision.gameObject.tag == "Ground") Destroy(gameObject);
     }
 
 }

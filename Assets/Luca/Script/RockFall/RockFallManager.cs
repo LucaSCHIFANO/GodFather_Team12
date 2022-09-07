@@ -13,6 +13,12 @@ public class RockFallManager : MonoBehaviour
     
     private void Start()
     {
+        StartCoroutine(PreSpawnTest());
+    }
+
+    IEnumerator PreSpawnTest()
+    {
+        yield return new WaitForSeconds(timeBeforeActivated);
         StartCoroutine(SpawnTest());
     }
 
