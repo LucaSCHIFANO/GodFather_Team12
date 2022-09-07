@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Rewired;
 
 public class drag_moove : MonoBehaviour
@@ -18,10 +19,7 @@ public class drag_moove : MonoBehaviour
     [SerializeField]private int playerID = 0 ;
     [SerializeField]private Player player;
 
-    //public void GameOver()
-    //{
-        //GameOverScreen.Setup();
-    //}
+    
     private void Awake()
     {
         
