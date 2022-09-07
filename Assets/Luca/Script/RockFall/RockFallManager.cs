@@ -1,18 +1,16 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
-public class BlockManagement : MonoBehaviour
+public class RockFallManager : MonoBehaviour
 {
     [SerializeField] private List<BlockMovement> listPattern = new List<BlockMovement>();
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private float timeBeforeActivated = 5f;
-    [SerializeField] private float timeBetweenSpawn = 3f;
+    [SerializeField] private float timeBetweenSpawn = 5f;
     [SerializeField] private float timeMultiplicator = 1f;
     private int lastPattern = -1;
-
+    
     private void Start()
     {
         StartCoroutine(SpawnTest());
@@ -37,7 +35,7 @@ public class BlockManagement : MonoBehaviour
         }
         
         var spawned = Instantiate(listPattern[lastPattern], spawnPoint.transform);
-        spawned.changeSpeed(new Vector2(timeMultiplicator, 0));
+        spawned.changeSpeed(new Vector2(0, timeMultiplicator));
         yield return new WaitForSeconds(timeBetweenSpawn);
         StartCoroutine(SpawnTest());
     }
