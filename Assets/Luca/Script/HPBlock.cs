@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HPBlock : HP
 {
-    override protected void removeHP(float hpToRemove)
+    override public void removeHP(float hpToRemove)
     {
         curretnHP -= hpToRemove;
         if (curretnHP <= 0)
