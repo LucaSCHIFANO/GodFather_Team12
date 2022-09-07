@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]private bool isJumping = false;
     [SerializeField] private int health = 5;
 
+    public GameObject currentParent;
+    private Rigidbody2D currentParentRB;
+
     private void Awake()
     {
         player = ReInput.players.GetPlayer(playerID);
@@ -25,12 +28,17 @@ public class PlayerController : MonoBehaviour
     {
         float moveHorizontal = player.GetAxis("Move Horizontal");
 
-        Vector2 movement = new Vector2(moveHorizontal,0);
-        rb.velocity = new Vector2(moveHorizontal*speed,rb.velocity.y);
+        if (currentParent != null)
+        {
+            moveHorizontal = (moveHorizontal * speed) + currentParentRB.velocity.x;
+        }
+
+        rb.velocity = new Vector2(moveHorizontal,rb.velocity.y);
 
         if (player.GetButtonDown("Jump") && !isJumping){
             rb.AddForce(Vector2.up * jumpForce);
             isJumping = true;
+            currentParent = null;
         }
         
         // if (player.GetButtonDown("Crouch")){
@@ -47,8 +55,19 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D col){
-        if (col.gameObject.tag == "Ground" && isJumping){
-            isJumping = false;
+        if (col.gameObject.tag == "Ground")
+        {
+            if (rb.velocity.y <= 0)
+            {
+                currentParent = col.gameObject;
+                currentParentRB = currentParent.GetComponent<Rigidbody2D>();
+
+            }
+
+            if (isJumping)
+            {
+                isJumping = false;
+            }
         }
     }
 }
