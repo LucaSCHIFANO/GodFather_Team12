@@ -10,6 +10,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private List<CheckStart> listController = new List<CheckStart>();
     private List<bool> playerReady = new List<bool>();
     [SerializeField] private List<GameObject> playerReadyVisu = new List<GameObject>();
+    [SerializeField] private Animator fadeOut;
 
     private void Start()
     {
@@ -44,6 +45,13 @@ public class MenuManager : MonoBehaviour
             number++;
         }
 
-        if (number == 2) SceneManager.LoadScene("Luca/SceneLuca", LoadSceneMode.Single);
+        if (number == 2) StartCoroutine(LoadLaScene());
+    }
+
+    IEnumerator LoadLaScene()
+    {
+        fadeOut.Play("FadeIn");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Luca/SceneLuca", LoadSceneMode.Single);
     }
 }
