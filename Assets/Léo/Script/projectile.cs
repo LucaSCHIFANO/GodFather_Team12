@@ -14,7 +14,11 @@ public class projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        collision.gameObject.GetComponent<HPBlock>().removeHP(dgt);
+        if (collision.gameObject.tag == "BreakableWall")
+        {
+            collision.gameObject.GetComponent<HPBlock>().removeHP(dgt);
+        }
+
         Destroy(gameObject);
     }
 
