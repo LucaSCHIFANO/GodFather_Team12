@@ -5,7 +5,7 @@ using Rewired;
 
 public class drag_moove : MonoBehaviour
 {
-    public GameOver GameOver;
+    public GameOverScreen GameOverScreen;
 
     public projectile projectilePrefab;
     public Transform LaunchOffSet;
@@ -18,6 +18,10 @@ public class drag_moove : MonoBehaviour
     [SerializeField]private int playerID = 0 ;
     [SerializeField]private Player player;
 
+    //public void GameOver()
+    //{
+        //GameOverScreen.Setup();
+    //}
     private void Awake()
     {
         
