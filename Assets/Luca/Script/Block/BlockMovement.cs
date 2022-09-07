@@ -5,7 +5,8 @@ using UnityEngine;
 public class BlockMovement : MonoBehaviour
 {
 
-    [SerializeField] private float speed;
+    [SerializeField] private float speedH;
+    [SerializeField] private float speedV;
     private Rigidbody2D rb;
         
     void Awake()
@@ -13,10 +14,11 @@ public class BlockMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    public void changeSpeed(float speed2)
+    public void changeSpeed(Vector2 speed2)
     {
-        speed *= speed2;
-        rb.velocity = new Vector2(-speed, 0);
+        speedH *= speed2.x;
+        speedV *= speed2.y;
+        rb.velocity = new Vector2(-speedH, -speedV);
     }
     
     
