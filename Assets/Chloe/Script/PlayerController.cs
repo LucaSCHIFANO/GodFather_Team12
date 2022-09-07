@@ -10,10 +10,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private BoxCollider2D  col;
 
     [SerializeField] private float jumpForce;
-    [SerializeField] private int speed;
-    [SerializeField] private int playerID = 0;
+    [SerializeField] private float speed;
+    private int playerID = 0;
+    [SerializeField] private int dashSpeed;
     [SerializeField]private bool isJumping = false;
-    [SerializeField] private int health = 5;
+    private int lastDirection = 1; // 1 = droite, -1 = gauche
 
     public GameObject currentParent;
     private Rigidbody2D currentParentRB;
@@ -23,11 +24,12 @@ public class PlayerController : MonoBehaviour
         player = ReInput.players.GetPlayer(playerID);
     }
 
-
     private void Update()
     {
         float moveHorizontal = player.GetAxis("Move Horizontal");
-
+        if (moveHorizontal != 0){
+            lastDirection = moveHorizontal > 0 ? 1: -1 ;
+        }
         if (currentParent != null)
         {
             moveHorizontal = (moveHorizontal * speed) + currentParentRB.velocity.x;
@@ -40,18 +42,9 @@ public class PlayerController : MonoBehaviour
             isJumping = true;
             currentParent = null;
         }
-        
-        // if (player.GetButtonDown("Crouch")){
-        //     col.offset = new Vector2(0,-0.25f);
-        //     col.size = new Vector2(1,0.5f);
-        //     GetComponent<SpriteRenderer>().sprite = spriteCrouch;
-        // }
 
-        // if (player.GetButtonUp("Crouch")){
-        //     col.offset = new Vector2(0,0f);
-        //     col.size = new Vector2(1,1f);
-        //     GetComponent<SpriteRenderer>().sprite = sprite;
-        // }
+        if(player.GetButtonDown("Dash")){
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D col){
