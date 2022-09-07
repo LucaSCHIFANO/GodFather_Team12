@@ -72,6 +72,9 @@ public class PlayerController : MonoBehaviour
             if (!onGround)
             {
                 onGround = true;
+                if (isDamaged){
+                    isDamaged = false;
+                }
             }
         }
     }
@@ -91,6 +94,6 @@ public class PlayerController : MonoBehaviour
 
     public void BounceBack(){
         isDamaged = true;
-        rb.AddForce(new Vector2(-bounceBackForce, bounceBackForce));
+        rb.AddForce(new Vector2(-bounceBackForce, bounceBackForce*2));
     }
 }
