@@ -530,7 +530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &559335668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1704,6 +1704,7 @@ MonoBehaviour:
   rb: {fileID: 1463642729}
   col: {fileID: 1463642728}
   jumpForce: 250
+  jumpForceWhenDragonGoUp: 0
   speed: 3
   dashPower: 24
   onGround: 0
@@ -1711,6 +1712,7 @@ MonoBehaviour:
   dashingCooldown: 0.5
   bounceBackForce: 0
   currentParent: {fileID: 0}
+  currentDragMove: {fileID: 0}
   Mort: {fileID: 0}
 --- !u!212 &1463642731
 SpriteRenderer:
@@ -2462,16 +2464,18 @@ MonoBehaviour:
   spawnRight: {fileID: 1527262547}
   spawnUp: {fileID: 1163495784}
   spawnDown: {fileID: 2143138276}
-  timeBeforeBegin: 3
+  timeBeforeBegin: 4
   listWavesPhase1:
   - listPattern:
-    - {fileID: 5364096165714790800, guid: 6d42ee268ed2f044fbfd59704f1a70e3, type: 3}
-    whereIsTheSpawn: 0
-    timeBeforeNextSpawn: 5
-  - listPattern:
-    - {fileID: -960123172769357752, guid: c890e9c35efd9aa4d8696668b4555698, type: 3}
+    - {fileID: -960123172769357752, guid: 398750693912ffa49bd333ca2b476bc9, type: 3}
+    - {fileID: -960123172769357752, guid: 398750693912ffa49bd333ca2b476bc9, type: 3}
+    - {fileID: -960123172769357752, guid: 398750693912ffa49bd333ca2b476bc9, type: 3}
+    - {fileID: -960123172769357752, guid: 398750693912ffa49bd333ca2b476bc9, type: 3}
     whereIsTheSpawn: 1
-    timeBeforeNextSpawn: 5
+    timeBeforeNextSpawn: 2
+  - listPattern: []
+    whereIsTheSpawn: 1
+    timeBeforeNextSpawn: 10
   listWavesPhase2:
   - listPattern:
     - {fileID: -8137415793535694426, guid: 81bc81592e763534981ae83cbd8eb323, type: 3}

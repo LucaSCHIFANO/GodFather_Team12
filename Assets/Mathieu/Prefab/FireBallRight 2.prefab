@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 8079629691448387483}
   - component: {fileID: 3958260521494820039}
   m_Layer: 6
-  m_Name: FireBallRight 1
+  m_Name: FireBallRight 2
   m_TagString: FallingObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
