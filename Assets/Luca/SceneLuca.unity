@@ -2886,10 +2886,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dragon
       objectReference: {fileID: 0}
-    - target: {fileID: 4042138405016598140, guid: f8b11476c2af6ea4195fa93704ee9b88, type: 3}
-      propertyPath: m_Mass
-      value: 1000000
-      objectReference: {fileID: 0}
     - target: {fileID: 4042138405016598142, guid: f8b11476c2af6ea4195fa93704ee9b88, type: 3}
       propertyPath: m_RootOrder
       value: 7
