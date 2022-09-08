@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - projectile
   - BreakableWall
+  - Mort
+  - FallingObject
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - Ground
   - DragonBody
   - Projectile
-  - 
-  - 
+  - BlockPlayer
+  - Player
   - 
   - 
   - 
