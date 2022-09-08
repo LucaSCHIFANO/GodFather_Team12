@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(moveHorizontal,rb.velocity.y);
 
         if (player.GetButtonDown("Jump") && onGround){
-            rb.AddForce(Vector2.up * jumpForce);
+            rb.AddForce(Vector2.up * (jumpForce + currentParentRB.velocity.y));
             onGround = false;
             currentParent = null;
         }
