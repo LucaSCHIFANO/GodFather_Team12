@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedH: 5
-  speedV: 5
+  speedV: 0
   timeBeforeDelete: 10
 --- !u!50 &6228658909242526719
 Rigidbody2D:
