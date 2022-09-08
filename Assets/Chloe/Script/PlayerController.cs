@@ -116,6 +116,11 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+        
+        if (col.gameObject.tag == "BreakableWall" && isDashing)
+        {
+           col.gameObject.GetComponent<HPBlock>().removeHP(10f); 
+        }
     }
 
     private void OnCollisionStay2D(Collision2D col){
