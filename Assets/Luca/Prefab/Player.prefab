@@ -61,6 +61,8 @@ MonoBehaviour:
   currentParent: {fileID: 0}
   currentDragMove: {fileID: 0}
   Mort: {fileID: 0}
+  normalGrav: 5
+  jumpGrav: 1
 --- !u!50 &7611045504895881745
 Rigidbody2D:
   serializedVersion: 4

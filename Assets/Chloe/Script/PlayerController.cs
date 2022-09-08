@@ -81,14 +81,14 @@ public class PlayerController : MonoBehaviour
         if(player.GetButtonDown("Dash") && canDash) { 
             StartCoroutine(Dash());
         }
-        if(Mort.dcd == true && player.GetButtonDown("Start"))
-        {
-            SceneManager.LoadScene("SceneLuca");
-        }
-        if (Mort.dcd == true && player.GetButtonDown("Select"))
-        {
-            SceneManager.LoadScene("TitleScreen");
-        }
+        // if(Mort.dcd == true && player.GetButtonDown("Start"))
+        // {
+        //     SceneManager.LoadScene("SceneLuca");
+        // }
+        // if (Mort.dcd == true && player.GetButtonDown("Select"))
+        // {
+        //     SceneManager.LoadScene("TitleScreen");
+        // }
         
         if(rb.velocity.y < 0 && !onGround) anim.Play("Human_Fall");
     }
@@ -111,6 +111,15 @@ public class PlayerController : MonoBehaviour
                 if (isDamaged){
                     isDamaged = false;
                 }
+            }
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D col){
+        if (col.gameObject.tag == "Ground")
+        {
+            if (isDamaged){
+                isDamaged = false;
             }
         }
     }
