@@ -1292,6 +1292,8 @@ MonoBehaviour:
   currentParent: {fileID: 0}
   currentDragMove: {fileID: 1112968023}
   Mort: {fileID: 1796707139}
+  normalGrav: 5
+  jumpGrav: 1
 --- !u!4 &1054830422
 Transform:
   m_ObjectHideFlags: 0
@@ -1895,6 +1897,8 @@ MonoBehaviour:
   currentParent: {fileID: 0}
   currentDragMove: {fileID: 1112968023}
   Mort: {fileID: 1796707139}
+  normalGrav: 0
+  jumpGrav: 0
 --- !u!212 &1463642731
 SpriteRenderer:
   m_ObjectHideFlags: 0

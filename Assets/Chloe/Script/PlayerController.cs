@@ -32,6 +32,9 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private SpriteRenderer sr;
 
+    [SerializeField] private float normalGrav;
+    [SerializeField] private float jumpGrav;
+
     private void Awake()
     {
         player = ReInput.players.GetPlayer(playerID);
@@ -63,6 +66,8 @@ public class PlayerController : MonoBehaviour
 
         if (player.GetButtonDown("Jump") && onGround)
         {
+            rb.gravityScale = jumpGrav;
+            
             if (!currentDragMove.retour) rb.AddForce(Vector2.up * (jumpForceWhenDragonGoUp));
             else rb.AddForce(Vector2.up * (jumpForce));
             
@@ -98,6 +103,8 @@ public class PlayerController : MonoBehaviour
                 anim.Play("Human_Idle");
             //}
 
+            if (rb.velocity.y <= 0) rb.gravityScale = normalGrav;
+            
             if (!onGround)
             {
                 onGround = true;
