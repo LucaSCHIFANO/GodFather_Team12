@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject currentParent;
     private Rigidbody2D currentParentRB;
+
+    public Mort Mort;
 
     private void Awake()
     {
@@ -57,6 +60,14 @@ public class PlayerController : MonoBehaviour
 
         if(player.GetButtonDown("Dash") && canDash){
             StartCoroutine(Dash());
+        }
+        if(Mort.dcd == true && player.GetButtonDown("Start"))
+        {
+            SceneManager.LoadScene("SceneLucas");
+        }
+        if (Mort.dcd == true && player.GetButtonDown("Select"))
+        {
+            SceneManager.LoadScene("TitleScreen");
         }
     }
 
