@@ -413,9 +413,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 483db9848f783ac45ac5a138bce8ba8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedH: 2
+  speedH: 10
   speedV: 0
-  timeBeforeDelete: 10000
+  timeBeforeDelete: 10000000
 --- !u!50 &7483814229690679107
 Rigidbody2D:
   serializedVersion: 4
