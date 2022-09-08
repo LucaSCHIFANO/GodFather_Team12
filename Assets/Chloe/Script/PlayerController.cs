@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
             currentParent = null;
         }
 
-        if(player.GetButtonDown("Dash") && canDash){
+        if(player.GetButtonDown("Dash") && canDash) { 
             StartCoroutine(Dash());
         }
         if(Mort.dcd == true && player.GetButtonDown("Start"))
