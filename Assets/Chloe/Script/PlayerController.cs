@@ -29,10 +29,14 @@ public class PlayerController : MonoBehaviour
 
     public Mort Mort;
 
+    private Animator anim;
+    private SpriteRenderer sr;
+
     private void Awake()
     {
         player = ReInput.players.GetPlayer(playerID);
-
+        anim = GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -42,6 +46,10 @@ public class PlayerController : MonoBehaviour
             return;
         }
         float moveHorizontal = player.GetAxis("Move Horizontal");
+        anim.SetFloat("Move", Mathf.Abs(moveHorizontal));
+        if (moveHorizontal > 0.2f) sr.flipX = false;
+        else if (moveHorizontal < -0.2f) sr.flipX = true;
+        
         if (moveHorizontal != 0){
             lastDirection = moveHorizontal > 0 ? 1: -1 ;
         }
@@ -58,6 +66,9 @@ public class PlayerController : MonoBehaviour
             if (!currentDragMove.retour) rb.AddForce(Vector2.up * (jumpForceWhenDragonGoUp));
             else rb.AddForce(Vector2.up * (jumpForce));
             
+            anim.Play("Human_Jump");
+            anim.SetBool("IsJumping", true);
+            
             onGround = false;
             currentParent = null;
         }
@@ -67,12 +78,14 @@ public class PlayerController : MonoBehaviour
         }
         if(Mort.dcd == true && player.GetButtonDown("Start"))
         {
-            SceneManager.LoadScene("SceneLucas");
+            SceneManager.LoadScene("SceneLuca");
         }
         if (Mort.dcd == true && player.GetButtonDown("Select"))
         {
             SceneManager.LoadScene("TitleScreen");
         }
+        
+        if(rb.velocity.y < 0 && anim.GetBool("Jump")) anim.Play("Human_Fall");
     }
 
     private void OnCollisionEnter2D(Collision2D col){
@@ -81,6 +94,8 @@ public class PlayerController : MonoBehaviour
             if (rb.velocity.y <= 0)
             {
                 currentParent = col.gameObject;
+                anim.SetBool("IsJumping", false);
+                anim.Play("Human_Idle");
             }
 
             if (!onGround)
