@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class projectile : MonoBehaviour
 {
+    public GameObject caster;
     public float speed = 4.5f;
     public float dgt = 1f;
 
@@ -14,13 +15,15 @@ public class projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log(collision.gameObject.tag);
+        
         if (collision.gameObject.tag == "BreakableWall")
         {
             collision.gameObject.GetComponent<HPBlock>().removeHP(dgt);
             Destroy(gameObject);
         }
         
-        if(collision.gameObject.tag == "Ground") Destroy(gameObject);
+        if(collision.gameObject.tag == "Ground" && collision.gameObject != caster) Destroy(gameObject);
     }
 
 }

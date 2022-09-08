@@ -44,7 +44,8 @@ public class drag_moove : MonoBehaviour
     {
         if (player.GetButtonDown("Shoot"))
         {
-            Instantiate(projectilePrefab, LaunchOffSet.position, transform.rotation);
+            var projo = Instantiate(projectilePrefab, LaunchOffSet.position, transform.rotation);
+            projo.caster = this.gameObject;
         }
     }
 }
