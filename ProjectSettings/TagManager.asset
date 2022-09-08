@@ -9,6 +9,8 @@ TagManager:
   - BreakableWall
   - Mort
   - FallingObject
+  - Coin
+  - Neko
   layers:
   - Default
   - TransparentFX
