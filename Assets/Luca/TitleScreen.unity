@@ -702,6 +702,7 @@ GameObject:
   - component: {fileID: 1358830341}
   - component: {fileID: 1358830340}
   - component: {fileID: 1358830344}
+  - component: {fileID: 1358830345}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -809,6 +810,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 540279328}
   fadeOut: {fileID: 1273664069}
+--- !u!114 &1358830345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358830339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9747bdf5cecabd4b8962b883c3c0e6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Menu
+    clip: {fileID: 8300000, guid: beb0a6e1885ccaa46acf7550c8a724b5, type: 3}
+    audioMixerGroup: {fileID: -5481426671619653516, guid: 3709d3e1a155e0f4cab4b4d907b18628, type: 2}
+    volume: 0.1
+    pitch: 1
+    playOnAwake: 1
+    loop: 1
+    source: {fileID: 0}
 --- !u!1 &1404117466
 GameObject:
   m_ObjectHideFlags: 0
