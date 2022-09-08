@@ -7,18 +7,20 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Player player;
     [SerializeField] private Rigidbody2D  rb;
-    [SerializeField] private BoxCollider2D  col;
+    [SerializeField] private CapsuleCollider2D  col;
 
     [SerializeField] private float jumpForce;
     [SerializeField] private float speed;
     private int playerID = 0;
-    [SerializeField] private float dashPower = 24f;
+    [SerializeField] private float dashPower;
     [SerializeField]private bool onGround = false;
     private int lastDirection = 1; // 1 = droite, -1 = gauche
     private bool isDashing = false;
     [SerializeField] private float dashingTime = 0.2f;
     [SerializeField] private float dashingCooldown = 1f;
+    [SerializeField] private float bounceBackForce;
     private bool canDash = true;
+    private bool isDamaged = false;
 
     public GameObject currentParent;
     private Rigidbody2D currentParentRB;
@@ -26,12 +28,13 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         player = ReInput.players.GetPlayer(playerID);
+
     }
 
     private void Update()
     {
 
-        if (isDashing){
+        if (isDashing || isDamaged){
             return;
         }
         float moveHorizontal = player.GetAxis("Move Horizontal");
@@ -69,6 +72,9 @@ public class PlayerController : MonoBehaviour
             if (!onGround)
             {
                 onGround = true;
+                if (isDamaged){
+                    isDamaged = false;
+                }
             }
         }
     }
@@ -84,5 +90,10 @@ public class PlayerController : MonoBehaviour
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;    
+    }
+
+    public void BounceBack(){
+        isDamaged = true;
+        rb.AddForce(new Vector2(-bounceBackForce, bounceBackForce*2));
     }
 }
