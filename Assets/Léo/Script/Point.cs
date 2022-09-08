@@ -6,24 +6,42 @@ using TMPro;
 
 public class Point : MonoBehaviour
 {
-    public TextMeshProUGUI PointText; 
-    public int coin; 
+    public TextMeshProUGUI PointText;
+    public int score;
 
     public GameObject effect;
 
     void Start()
     {
-        PointText.text = coin.ToString();
+        PointText.text = score.ToString();
+        StartCoroutine(Score());
+    }
+    private void Update()
+    {
+        
     }
     void OnTriggerEnter2D(Collider2D truc)
     {
         if (truc.tag == "Coin")
         {
-            coin++;
-            PointText.text = coin.ToString();
+            score+=100;
+            PointText.text = score.ToString();
+            Destroy(truc.gameObject);
+            Instantiate(effect, truc.transform.position, Quaternion.identity);
+        }
+        if (truc.tag == "Neko")
+        {
+            score += 5000;
+            PointText.text = score.ToString();
             Destroy(truc.gameObject);
             Instantiate(effect, truc.transform.position, Quaternion.identity);
         }
     }
-
-}
+    IEnumerator Score()
+    {
+        yield return new WaitForSeconds(1f);
+        score += 100;
+        PointText.text = score.ToString();
+        StartCoroutine(Score());
+    }
+    }
