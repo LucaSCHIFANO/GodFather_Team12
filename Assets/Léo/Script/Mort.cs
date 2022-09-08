@@ -22,12 +22,12 @@ public class Mort : MonoBehaviour
             Time.timeScale = 0;
         }
     }
-    private void Update()
+    /*private void Update()
     {
         if ()
         {
 
         }
-    }
+    }*/
 
 }
