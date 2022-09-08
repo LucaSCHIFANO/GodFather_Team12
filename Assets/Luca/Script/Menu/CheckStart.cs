@@ -26,7 +26,6 @@ public class CheckStart : MonoBehaviour
     {
         if (player.GetButtonDown("Start"))
         {
-            Debug.Log(gameObject.name);
             mm.setPlayerReady(playerID == 0);
         }
     }
