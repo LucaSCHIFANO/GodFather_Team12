@@ -486,7 +486,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7611045504895881744, guid: 508b7e81e2632104b84c047e30297d29, type: 3}
       propertyPath: jumpForce
-      value: 300
+      value: 3000
       objectReference: {fileID: 0}
     - target: {fileID: 7611045504895881744, guid: 508b7e81e2632104b84c047e30297d29, type: 3}
       propertyPath: currentDragMove
@@ -494,7 +494,7 @@ PrefabInstance:
       objectReference: {fileID: 901719544}
     - target: {fileID: 7611045504895881744, guid: 508b7e81e2632104b84c047e30297d29, type: 3}
       propertyPath: jumpForceWhenDragonGoUp
-      value: 100
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 7611045504895881747, guid: 508b7e81e2632104b84c047e30297d29, type: 3}
       propertyPath: m_RootOrder
@@ -2398,7 +2398,7 @@ MonoBehaviour:
   timeBeforeBegin: 4
   listWavesPhase1:
   - listPattern:
-    - {fileID: -960123172769357752, guid: 38a0b666b4211cf479287caa963ec5e5, type: 3}
+    - {fileID: -960123172769357752, guid: 938f2ede26ee9e14984163d526aa80d6, type: 3}
     whereIsTheSpawn: 0
     timeBeforeNextSpawn: 2
   - listPattern: []
