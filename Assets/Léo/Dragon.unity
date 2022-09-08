@@ -618,7 +618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6277347226073822502, guid: f176c9c694ecb7443bf38848ffdb3af0, type: 3}
       propertyPath: _userData.keyboardMaps.Array.data[0].actionElementMaps.Array.size
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6277347226073822502, guid: f176c9c694ecb7443bf38848ffdb3af0, type: 3}
       propertyPath: _userData.keyboardMaps.Array.data[0].actionElementMaps.Array.data[11]._actionId
@@ -630,7 +630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6277347226073822502, guid: f176c9c694ecb7443bf38848ffdb3af0, type: 3}
       propertyPath: _userData.keyboardMaps.Array.data[0].actionElementMaps.Array.data[11]._keyboardKeyCode
-      value: 27
+      value: 303
       objectReference: {fileID: 0}
     - target: {fileID: 6277347226073822502, guid: f176c9c694ecb7443bf38848ffdb3af0, type: 3}
       propertyPath: _userData.keyboardMaps.Array.data[0].actionElementMaps.Array.data[11]._elementIdentifierId
