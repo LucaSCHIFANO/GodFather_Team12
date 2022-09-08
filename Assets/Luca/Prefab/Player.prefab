@@ -50,19 +50,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 7611045504895881745}
   col: {fileID: 7611045504895881750}
-  jumpForce: 250
-  jumpForceWhenDragonGoUp: 375
-  speed: 3
-  dashPower: 3
+  jumpForce: 3000
+  jumpForceWhenDragonGoUp: 6000
+  speed: 6
+  dashPower: 4
   onGround: 0
   dashingTime: 0.2
-  dashingCooldown: 0.5
+  dashingCooldown: 0.4
   bounceBackForce: 20
   currentParent: {fileID: 0}
   currentDragMove: {fileID: 0}
   Mort: {fileID: 0}
   normalGrav: 5
-  jumpGrav: 1
+  jumpGrav: 3
 --- !u!50 &7611045504895881745
 Rigidbody2D:
   serializedVersion: 4
@@ -75,10 +75,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 6200000, guid: 01f2e710f5c3ae147b0b0149c389253b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
