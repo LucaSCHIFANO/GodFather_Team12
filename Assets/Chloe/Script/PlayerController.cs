@@ -81,14 +81,17 @@ public class PlayerController : MonoBehaviour
         if(player.GetButtonDown("Dash") && canDash) { 
             StartCoroutine(Dash());
         }
-        // if(Mort.dcd == true && player.GetButtonDown("Start"))
-        // {
-        //     SceneManager.LoadScene("SceneLuca");
-        // }
-        // if (Mort.dcd == true && player.GetButtonDown("Select"))
-        // {
-        //     SceneManager.LoadScene("TitleScreen");
-        // }
+        
+        if(Mort.dcd == true && player.GetButtonDown("Start"))
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene("SceneLuca");
+        }
+        if (Mort.dcd == true && player.GetButtonDown("Select"))
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene("TitleScreen");
+        }
         
         if(rb.velocity.y < 0 && !onGround) anim.Play("Human_Fall");
     }
