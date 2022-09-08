@@ -85,18 +85,18 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene("TitleScreen");
         }
         
-        if(rb.velocity.y < 0 && anim.GetBool("Jump")) anim.Play("Human_Fall");
+        if(rb.velocity.y < 0 && !onGround) anim.Play("Human_Fall");
     }
 
     private void OnCollisionEnter2D(Collision2D col){
         if (col.gameObject.tag == "Ground")
         {
-            if (rb.velocity.y <= 0)
-            {
+            /*if (rb.velocity.y <= 0)
+            {*/
                 currentParent = col.gameObject;
                 anim.SetBool("IsJumping", false);
                 anim.Play("Human_Idle");
-            }
+            //}
 
             if (!onGround)
             {
@@ -109,6 +109,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private IEnumerator Dash(){
+        anim.Play("Human_Dash");
         canDash = false;
         isDashing = true;
         float originalGravity = rb.gravityScale;
@@ -117,8 +118,9 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(dashingTime);
         rb.gravityScale = originalGravity;
         isDashing = false;
+        anim.Play("Human_Fall");
         yield return new WaitForSeconds(dashingCooldown);
-        canDash = true;    
+        canDash = true;
     }
 
     public void BounceBack(){

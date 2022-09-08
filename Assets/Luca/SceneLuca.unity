@@ -1284,7 +1284,7 @@ MonoBehaviour:
   jumpForce: 250
   jumpForceWhenDragonGoUp: 375
   speed: 3
-  dashPower: 24
+  dashPower: 3
   onGround: 0
   dashingTime: 0.2
   dashingCooldown: 0.5
@@ -1300,7 +1300,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1054830416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.59, y: -1.87, z: 0}
+  m_LocalPosition: {x: 0.85, y: -1.36, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
