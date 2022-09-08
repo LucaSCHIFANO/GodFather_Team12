@@ -13,7 +13,7 @@ public class drag_move : MonoBehaviour
     private Vector2 directionAngle;
     private Vector3 point1Position;
     private Vector3 point2Position;
-    private bool retour;
+    public bool retour;
 
 
     void Start()

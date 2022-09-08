@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private CapsuleCollider2D  col;
 
     [SerializeField] private float jumpForce;
+    [SerializeField] private float jumpForceWhenDragonGoUp;
     [SerializeField] private float speed;
     private int playerID = 0;
     [SerializeField] private float dashPower;
@@ -24,7 +25,7 @@ public class PlayerController : MonoBehaviour
     private bool isDamaged = false;
 
     public GameObject currentParent;
-    private Rigidbody2D currentParentRB;
+    public drag_move currentDragMove;
 
     public Mort Mort;
 
@@ -46,14 +47,17 @@ public class PlayerController : MonoBehaviour
         }
         if (currentParent != null)
         {
-            moveHorizontal = (moveHorizontal * speed) + currentParentRB.velocity.x;
+            moveHorizontal = (moveHorizontal * speed);
         } else{
             moveHorizontal = moveHorizontal * speed;
         } 
         rb.velocity = new Vector2(moveHorizontal,rb.velocity.y);
 
-        if (player.GetButtonDown("Jump") && onGround){
-            rb.AddForce(Vector2.up * (jumpForce + currentParentRB.velocity.y));
+        if (player.GetButtonDown("Jump") && onGround)
+        {
+            if (!currentDragMove.retour) rb.AddForce(Vector2.up * (jumpForceWhenDragonGoUp));
+            else rb.AddForce(Vector2.up * (jumpForce));
+            
             onGround = false;
             currentParent = null;
         }
@@ -77,7 +81,6 @@ public class PlayerController : MonoBehaviour
             if (rb.velocity.y <= 0)
             {
                 currentParent = col.gameObject;
-                currentParentRB = currentParent.GetComponent<Rigidbody2D>();
             }
 
             if (!onGround)
