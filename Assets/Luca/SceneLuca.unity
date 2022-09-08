@@ -2710,7 +2710,7 @@ MonoBehaviour:
   timeBeforeBegin: 3
   listWavesPhase1:
   - listPattern:
-    - {fileID: 4287586810379513292, guid: 17e34d3573f5f0148a9656103b4de9bd, type: 3}
+    - {fileID: 4269824417238323700, guid: 46c8f3952a07e204f976231bc4010d68, type: 3}
     whereIsTheSpawn: 0
     timeBeforeNextSpawn: 5
   - listPattern:
