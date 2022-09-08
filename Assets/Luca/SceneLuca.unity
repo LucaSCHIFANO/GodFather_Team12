@@ -686,7 +686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Main
-    clip: {fileID: 8300000, guid: beb0a6e1885ccaa46acf7550c8a724b5, type: 3}
+    clip: {fileID: 8300000, guid: 18df14af9a7e7ca41ace488d2bbbc63d, type: 3}
     audioMixerGroup: {fileID: -5481426671619653516, guid: 3709d3e1a155e0f4cab4b4d907b18628, type: 2}
     volume: 0.1
     pitch: 1
@@ -2889,8 +2889,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2130775448}
   m_LocalRotation: {x: -0, y: -0, z: -0.70710707, w: 0.7071066}
-  m_LocalPosition: {x: 3.8100019, y: -5.470004, z: 0}
-  m_LocalScale: {x: 0.6021, y: 20.598381, z: 1}
+  m_LocalPosition: {x: 34.5823, y: -5.47, z: 0}
+  m_LocalScale: {x: 0.6021, y: 82.142105, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3052,9 +3052,17 @@ PrefabInstance:
       propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2807492185500124164, guid: 283b030a95831504e84974fd2df3fbdd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5740065070663437806, guid: 283b030a95831504e84974fd2df3fbdd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5900232237535053464, guid: 283b030a95831504e84974fd2df3fbdd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6478964861161550312, guid: 283b030a95831504e84974fd2df3fbdd, type: 3}
       propertyPath: m_Name
@@ -3114,7 +3122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8367465926376535802, guid: 283b030a95831504e84974fd2df3fbdd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 699553326227026771, guid: 283b030a95831504e84974fd2df3fbdd, type: 3}
