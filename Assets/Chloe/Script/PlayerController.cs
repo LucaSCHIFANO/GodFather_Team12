@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private CapsuleCollider2D  col;
 
     [SerializeField] private float jumpForce;
+    [SerializeField] private float jumpForceWhenDragonGoUp;
     [SerializeField] private float speed;
     private int playerID = 0;
     [SerializeField] private float dashPower;
@@ -24,14 +25,18 @@ public class PlayerController : MonoBehaviour
     private bool isDamaged = false;
 
     public GameObject currentParent;
-    private Rigidbody2D currentParentRB;
+    public drag_move currentDragMove;
 
     public Mort Mort;
+
+    private Animator anim;
+    private SpriteRenderer sr;
 
     private void Awake()
     {
         player = ReInput.players.GetPlayer(playerID);
-
+        anim = GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -41,19 +46,29 @@ public class PlayerController : MonoBehaviour
             return;
         }
         float moveHorizontal = player.GetAxis("Move Horizontal");
+        anim.SetFloat("Move", Mathf.Abs(moveHorizontal));
+        if (moveHorizontal > 0.2f) sr.flipX = false;
+        else if (moveHorizontal < -0.2f) sr.flipX = true;
+        
         if (moveHorizontal != 0){
             lastDirection = moveHorizontal > 0 ? 1: -1 ;
         }
         if (currentParent != null)
         {
-            moveHorizontal = (moveHorizontal * speed) + currentParentRB.velocity.x;
+            moveHorizontal = (moveHorizontal * speed);
         } else{
             moveHorizontal = moveHorizontal * speed;
         } 
         rb.velocity = new Vector2(moveHorizontal,rb.velocity.y);
 
-        if (player.GetButtonDown("Jump") && onGround){
-            rb.AddForce(Vector2.up * (jumpForce + currentParentRB.velocity.y));
+        if (player.GetButtonDown("Jump") && onGround)
+        {
+            if (!currentDragMove.retour) rb.AddForce(Vector2.up * (jumpForceWhenDragonGoUp));
+            else rb.AddForce(Vector2.up * (jumpForce));
+            
+            anim.Play("Human_Jump");
+            anim.SetBool("IsJumping", true);
+            
             onGround = false;
             currentParent = null;
         }
@@ -63,22 +78,25 @@ public class PlayerController : MonoBehaviour
         }
         if(Mort.dcd == true && player.GetButtonDown("Start"))
         {
-            SceneManager.LoadScene("SceneLucas");
+            SceneManager.LoadScene("SceneLuca");
         }
         if (Mort.dcd == true && player.GetButtonDown("Select"))
         {
             SceneManager.LoadScene("TitleScreen");
         }
+        
+        if(rb.velocity.y < 0 && !onGround) anim.Play("Human_Fall");
     }
 
     private void OnCollisionEnter2D(Collision2D col){
         if (col.gameObject.tag == "Ground")
         {
-            if (rb.velocity.y <= 0)
-            {
+            /*if (rb.velocity.y <= 0)
+            {*/
                 currentParent = col.gameObject;
-                currentParentRB = currentParent.GetComponent<Rigidbody2D>();
-            }
+                anim.SetBool("IsJumping", false);
+                anim.Play("Human_Idle");
+            //}
 
             if (!onGround)
             {
@@ -91,6 +109,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private IEnumerator Dash(){
+        anim.Play("Human_Dash");
         canDash = false;
         isDashing = true;
         float originalGravity = rb.gravityScale;
@@ -99,8 +118,9 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(dashingTime);
         rb.gravityScale = originalGravity;
         isDashing = false;
+        anim.Play("Human_Fall");
         yield return new WaitForSeconds(dashingCooldown);
-        canDash = true;    
+        canDash = true;
     }
 
     public void BounceBack(){

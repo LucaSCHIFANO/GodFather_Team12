@@ -88,11 +88,11 @@ public class WavesManager : MonoBehaviour
         switch (currentWaves.whereIsTheSpawn)
         {
             case Waves.position.RIGHT :
-                spawned.changeSpeed(new Vector2(1, 0));
+                spawned.changeSpeed(new Vector2(1, 1));
                 break;
             
             case Waves.position.UP :
-                spawned.changeSpeed(new Vector2(0, 1));
+                spawned.changeSpeed(new Vector2(1, 1));
                 break;
             
             case Waves.position.DOWN :
