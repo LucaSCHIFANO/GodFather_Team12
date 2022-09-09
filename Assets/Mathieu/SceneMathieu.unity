@@ -493,6 +493,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 901719544}
     - target: {fileID: 7611045504895881744, guid: 508b7e81e2632104b84c047e30297d29, type: 3}
+      propertyPath: bounceBackForceup
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7611045504895881744, guid: 508b7e81e2632104b84c047e30297d29, type: 3}
+      propertyPath: bounceBackForceleft
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7611045504895881744, guid: 508b7e81e2632104b84c047e30297d29, type: 3}
       propertyPath: jumpForceWhenDragonGoUp
       value: 6000
       objectReference: {fileID: 0}
@@ -2395,6 +2403,7 @@ MonoBehaviour:
   spawnRight: {fileID: 1527262547}
   spawnUp: {fileID: 1163495784}
   spawnDown: {fileID: 2143138276}
+  levelMagmaBall: {fileID: 0}
   timeBeforeBegin: 4
   listWavesPhase1:
   - listPattern:

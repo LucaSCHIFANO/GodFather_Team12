@@ -58,7 +58,9 @@ MonoBehaviour:
   jumpNumber: 2
   dashingTime: 0.2
   dashingCooldown: 0.3
-  bounceBackForce: 20
+  bounceBackForceleft: 2000
+  bounceBackForceup: 2000
+  bounceBackTime: 1
   currentParent: {fileID: 0}
   currentDragMove: {fileID: 0}
   Mort: {fileID: 0}

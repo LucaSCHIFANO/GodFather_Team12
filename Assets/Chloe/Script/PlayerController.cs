@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
 using UnityEngine.SceneManagement;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -23,7 +24,9 @@ public class PlayerController : MonoBehaviour
     private bool isDashing = false;
     [SerializeField] private float dashingTime = 0.2f;
     [SerializeField] private float dashingCooldown = 1f;
-    [SerializeField] private float bounceBackForce;
+    [SerializeField] private float bounceBackForceleft;
+    [SerializeField] private float bounceBackForceup;
+    [SerializeField] private float bounceBackTime = 1f;
     private bool canDash = true;
     private bool isDamaged = false;
 
@@ -71,6 +74,7 @@ public class PlayerController : MonoBehaviour
 
         if (player.GetButtonDown("Jump") && jumpLeft > 0)
         {
+            Debug.LogError("Jump");
             jumpLeft -= 1;
             rb.gravityScale = jumpGrav;
             
@@ -88,12 +92,12 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(Dash());
         }
         
-        if(Mort.dcd == true && player.GetButtonDown("Start"))
+        if(Mort != null && Mort.dcd == true && player.GetButtonDown("Start"))
         {
             Time.timeScale = 1;
             SceneManager.LoadScene("SceneLuca");
         }
-        if (Mort.dcd == true && player.GetButtonDown("Select"))
+        if (Mort != null && Mort.dcd == true && player.GetButtonDown("Select"))
         {
             Time.timeScale = 1;
             SceneManager.LoadScene("TitleScreen");
@@ -118,9 +122,9 @@ public class PlayerController : MonoBehaviour
             {
                 jumpLeft = jumpNumber;
                 onGround = true;
-                if (isDamaged){
-                    isDamaged = false;
-                }
+                //if (isDamaged){
+                //    isDamaged = false;
+                //}
             }
         }
         //
@@ -131,12 +135,12 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnCollisionStay2D(Collision2D col){
-        if (col.gameObject.tag == "Ground")
-        {
-            if (isDamaged){
-                isDamaged = false;
-            }
-        }
+        //if (col.gameObject.tag == "Ground")
+        //{
+        //    if (isDamaged){
+        //        isDamaged = false;
+        //    }
+        //}
     }
 
     private IEnumerator Dash(){
@@ -164,6 +168,25 @@ public class PlayerController : MonoBehaviour
 
     public void BounceBack(){
         isDamaged = true;
-        rb.AddForce(new Vector2(-bounceBackForce, bounceBackForce*2));
+        //rb.gravityScale = normalGrav;
+        //rb.velocity = new Vector2(-bounceBackForce * 2, bounceBackForce);
+        //rb.velocity = new Vector2(-bounceBackForceleft, bounceBackForceup);
+        rb.velocity = Vector2.zero; 
+        rb.AddForce(new Vector2(-bounceBackForceleft,bounceBackForceup), ForceMode2D.Impulse);
+        //rb.AddForce(Vector2.up * bounceBackForce);
+        StartCoroutine(EndIsDamaged());
+        StartCoroutine(HitStun());
+    }
+
+    private IEnumerator EndIsDamaged()
+    {
+        yield return new WaitForSeconds(0.45f);
+        rb.velocity = Vector2.zero;
+    }
+    private IEnumerator HitStun()
+    {
+        yield return new WaitForSeconds(1.1f);
+        rb.velocity = Vector2.zero;
+        isDamaged = false;
     }
 }
