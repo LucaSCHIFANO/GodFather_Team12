@@ -11,8 +11,6 @@ public class Mort : MonoBehaviour
     public void Start()
     {
         DeathScreen.SetActive(false);
-        death = false;
-        dcd = false;
     }
     void OnTriggerEnter2D(Collider2D truc)
     {
@@ -22,15 +20,7 @@ public class Mort : MonoBehaviour
     public void Death()
     {
         DeathScreen.SetActive(true);
-        death = true;
         Time.timeScale = 0;
-    } 
-    private void Update()
-    {
-        if (death == true )
-        {
-            dcd = true;
-        }
     }
 
 }
