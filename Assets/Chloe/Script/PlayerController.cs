@@ -21,14 +21,14 @@ public class PlayerController : MonoBehaviour
     private int jumpLeft;
 
     private int lastDirection = 1; // 1 = droite, -1 = gauche
-    private bool isDashing = false;
+    public bool isDashing = false;
     [SerializeField] private float dashingTime = 0.2f;
     [SerializeField] private float dashingCooldown = 1f;
     [SerializeField] private float bounceBackForceleft;
     [SerializeField] private float bounceBackForceup;
     [SerializeField] private float bounceBackTime = 1f;
     private bool canDash = true;
-    private bool isDamaged = false;
+    public bool isDamaged = false;
 
     public GameObject currentParent;
     public drag_move currentDragMove;
@@ -43,12 +43,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private BoxCollider2D LeftCC;
     [SerializeField] private BoxCollider2D RightCC;
 
+    private SoundTransmitter st;
+
     private void Awake()
     {
         player = ReInput.players.GetPlayer(playerID);
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         jumpLeft = jumpNumber;
+        st = GetComponent<SoundTransmitter>();
     }
 
     private void Update()
@@ -74,6 +77,7 @@ public class PlayerController : MonoBehaviour
 
         if (player.GetButtonDown("Jump") && jumpLeft > 0)
         {
+            st.Play("Jump");
             jumpLeft -= 1;
             rb.gravityScale = jumpGrav;
             
@@ -88,6 +92,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if(player.GetButtonDown("Dash") && canDash) { 
+            st.Play("Dash");
             StartCoroutine(Dash());
         }
         

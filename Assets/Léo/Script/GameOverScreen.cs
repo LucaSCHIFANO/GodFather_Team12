@@ -11,6 +11,8 @@ public class GameOverScreen : MonoBehaviour
 
     public SoundTransmitter st;
     private bool one;
+    
+    public PlayerController pc;
 
     public void Start()
     {
@@ -23,6 +25,8 @@ public class GameOverScreen : MonoBehaviour
             Chrono = true;
             if (!one)
             {
+                pc.isDamaged = false;
+                pc.isDashing = false;
                 one = true;
                 st.Stop("Main");
                 st.Play("GO");
