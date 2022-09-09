@@ -489,29 +489,9 @@ PrefabInstance:
       value: Player (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6478964861161550317, guid: 283b030a95831504e84974fd2df3fbdd, type: 3}
-      propertyPath: Mort
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6478964861161550317, guid: 283b030a95831504e84974fd2df3fbdd, type: 3}
-      propertyPath: speed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6478964861161550317, guid: 283b030a95831504e84974fd2df3fbdd, type: 3}
-      propertyPath: bounceBackForce
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 6478964861161550317, guid: 283b030a95831504e84974fd2df3fbdd, type: 3}
       propertyPath: currentDragMove
       value: 
       objectReference: {fileID: 1112968023}
-    - target: {fileID: 6478964861161550317, guid: 283b030a95831504e84974fd2df3fbdd, type: 3}
-      propertyPath: bounceBackForceup
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 6478964861161550317, guid: 283b030a95831504e84974fd2df3fbdd, type: 3}
-      propertyPath: bounceBackForceleft
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 6478964861161550318, guid: 283b030a95831504e84974fd2df3fbdd, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1521,6 +1501,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e11a659288a997b40bbbdcd6588ba2e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeathScreen: {fileID: 0}
+  Chrono: 0
+  st: {fileID: 0}
 --- !u!114 &1129185032
 MonoBehaviour:
   m_ObjectHideFlags: 0
