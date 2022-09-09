@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed;
     private int playerID = 0;
     [SerializeField] private float dashPower;
-    [SerializeField]private bool onGround = false;
+    public bool onGround = false;
     [SerializeField]private int jumpNumber = 2;
     private int jumpLeft;
 
@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     public GameObject currentParent;
     public drag_move currentDragMove;
 
-    public Mort Mort;
+    public GameOverScreen gameOver;
 
     private Animator anim;
     private SpriteRenderer sr;
@@ -88,12 +88,12 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(Dash());
         }
         
-        if(Mort.dcd == true && player.GetButtonDown("Start"))
+        if(gameOver.Chrono == true && player.GetButtonDown("Start"))
         {
             Time.timeScale = 1;
             SceneManager.LoadScene("SceneLuca");
         }
-        if (Mort.dcd == true && player.GetButtonDown("Select"))
+        if (gameOver.Chrono == true && player.GetButtonDown("Select"))
         {
             Time.timeScale = 1;
             SceneManager.LoadScene("TitleScreen");

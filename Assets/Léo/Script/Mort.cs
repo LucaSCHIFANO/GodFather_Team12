@@ -11,24 +11,16 @@ public class Mort : MonoBehaviour
     public void Start()
     {
         DeathScreen.SetActive(false);
-        death = false;
-        dcd = false;
     }
     void OnTriggerEnter2D(Collider2D truc)
     {
-        if (truc.tag == "Player")
-        {
-            DeathScreen.SetActive(true);
-            death = true;
-            Time.timeScale = 0;
-        }
+        if (truc.tag == "Player") Death();
     }
-    private void Update()
+
+    public void Death()
     {
-        if (death == true )
-        {
-            dcd = true;
-        }
+        DeathScreen.SetActive(true);
+        Time.timeScale = 0;
     }
 
 }

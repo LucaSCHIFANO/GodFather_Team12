@@ -6,12 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class GameOverScreen : MonoBehaviour
 {
-    public void RestartButton()
+    public GameObject DeathScreen;
+    public bool Chrono;
+
+    public void Start()
     {
-        SceneManager.LoadScene("Dragon");
+        Chrono = false;
     }
-    public void ExitButton()
+    public void Update()
     {
-        SceneManager.LoadScene("MainMenu");
+        if (Time.timeScale == 0)
+        {
+            Chrono = true;
+        }
     }
+
 }
