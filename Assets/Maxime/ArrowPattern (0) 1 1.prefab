@@ -77,6 +77,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1749415523170263467}
     m_Modifications:
+    - target: {fileID: -7159039702849660473, guid: 89162aabcea7be148ab745f9120e4805, type: 3}
+      propertyPath: deathObject
+      value: 
+      objectReference: {fileID: 4729646737521289031, guid: 11f6f00640d1b394f919c01d23223a75, type: 3}
     - target: {fileID: 2637592971508040597, guid: 89162aabcea7be148ab745f9120e4805, type: 3}
       propertyPath: m_Name
       value: Arrow (2)

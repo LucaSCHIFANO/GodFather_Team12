@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 280016113087042889}
   m_Layer: 6
   m_Name: Grass
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 3130036139442586098}
   m_Layer: 6
   m_Name: TestMur 2 1 1 1 1 1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
