@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1331209885477964768}
   - component: {fileID: 2807492185500124164}
   - component: {fileID: 4098200261983177027}
-  - component: {fileID: 699553326227026771}
   m_Layer: 11
   m_Name: LeftHB (1)
   m_TagString: Untagged
@@ -44,7 +43,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.2903795, y: 0}
@@ -72,27 +71,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da340a135fe387a408f7c283e3d0b05c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!50 &699553326227026771
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5900232237535053464}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 0
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!1 &6478964861161550312
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,6 +85,7 @@ GameObject:
   - component: {fileID: 6478964861161550315}
   - component: {fileID: 6478964861161550314}
   - component: {fileID: 6478964861161550313}
+  - component: {fileID: 1441184433}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -151,6 +130,7 @@ MonoBehaviour:
   speed: 3
   dashPower: 3
   onGround: 0
+  jumpNumber: 2
   dashingTime: 0.2
   dashingCooldown: 0.5
   bounceBackForce: 20
@@ -270,6 +250,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1441184433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6478964861161550312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9747bdf5cecabd4b8962b883c3c0e6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Dash
+    clip: {fileID: 8300000, guid: 32f1dd521935afa43ae6c8f228c1f339, type: 3}
+    audioMixerGroup: {fileID: 7897333915968156096, guid: 3709d3e1a155e0f4cab4b4d907b18628, type: 2}
+    volume: 0.1
+    pitch: 1
+    playOnAwake: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Jump
+    clip: {fileID: 8300000, guid: 9d79b5119c376e54e826c3715fa7749d, type: 3}
+    audioMixerGroup: {fileID: 7897333915968156096, guid: 3709d3e1a155e0f4cab4b4d907b18628, type: 2}
+    volume: 0.1
+    pitch: 1
+    playOnAwake: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Neko
+    clip: {fileID: 8300000, guid: ffa35f93da0d8fa438daa305b4a05cc6, type: 3}
+    audioMixerGroup: {fileID: 7897333915968156096, guid: 3709d3e1a155e0f4cab4b4d907b18628, type: 2}
+    volume: 0.1
+    pitch: 1
+    playOnAwake: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Coin
+    clip: {fileID: 8300000, guid: 39b024c883a320a4db808f36f8579632, type: 3}
+    audioMixerGroup: {fileID: 7897333915968156096, guid: 3709d3e1a155e0f4cab4b4d907b18628, type: 2}
+    volume: 0.1
+    pitch: 1
+    playOnAwake: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!1 &8367465926376535802
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +306,6 @@ GameObject:
   - component: {fileID: 5380631923261733953}
   - component: {fileID: 5740065070663437806}
   - component: {fileID: 9148833859214341151}
-  - component: {fileID: 8733950467180981916}
   m_Layer: 11
   m_Name: LeftHB
   m_TagString: Untagged
@@ -314,7 +338,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.2903795, y: 0}
@@ -342,27 +366,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da340a135fe387a408f7c283e3d0b05c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!50 &8733950467180981916
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8367465926376535802}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 0
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!1 &8384411928604017734
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,7 +409,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.010420516, y: 0.1250212}
