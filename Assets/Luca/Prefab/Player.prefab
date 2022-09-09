@@ -50,19 +50,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 7611045504895881745}
   col: {fileID: 7611045504895881750}
-  jumpForce: 3000
-  jumpForceWhenDragonGoUp: 6000
-  speed: 6
-  dashPower: 4
+  jumpForce: 5000
+  jumpForceWhenDragonGoUp: 7000
+  speed: 7
+  dashPower: 5
   onGround: 0
+  jumpNumber: 2
   dashingTime: 0.2
-  dashingCooldown: 0.4
+  dashingCooldown: 0.3
   bounceBackForce: 20
   currentParent: {fileID: 0}
   currentDragMove: {fileID: 0}
   Mort: {fileID: 0}
   normalGrav: 5
   jumpGrav: 3
+  LeftCC: {fileID: 0}
+  RightCC: {fileID: 0}
 --- !u!50 &7611045504895881745
 Rigidbody2D:
   serializedVersion: 4

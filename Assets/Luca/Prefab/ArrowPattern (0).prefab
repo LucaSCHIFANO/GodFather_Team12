@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedH: 0
-  speedV: 2
+  speedV: 5
   timeBeforeDelete: 10
 --- !u!1001 &193053112549950692
 PrefabInstance:

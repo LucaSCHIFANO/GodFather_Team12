@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
     private int playerID = 0;
     [SerializeField] private float dashPower;
     [SerializeField]private bool onGround = false;
+    [SerializeField]private int jumpNumber = 2;
+    private int jumpLeft;
+
     private int lastDirection = 1; // 1 = droite, -1 = gauche
     private bool isDashing = false;
     [SerializeField] private float dashingTime = 0.2f;
@@ -42,11 +45,11 @@ public class PlayerController : MonoBehaviour
         player = ReInput.players.GetPlayer(playerID);
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+        jumpLeft = jumpNumber;
     }
 
     private void Update()
     {
-
         if (isDashing || isDamaged){
             return;
         }
@@ -66,8 +69,9 @@ public class PlayerController : MonoBehaviour
         } 
         rb.velocity = new Vector2(moveHorizontal,rb.velocity.y);
 
-        if (player.GetButtonDown("Jump") && onGround)
+        if (player.GetButtonDown("Jump") && jumpLeft > 0)
         {
+            jumpLeft -= 1;
             rb.gravityScale = jumpGrav;
             
             if (!currentDragMove.retour) rb.AddForce(Vector2.up * (jumpForceWhenDragonGoUp));
@@ -112,6 +116,7 @@ public class PlayerController : MonoBehaviour
             
             if (!onGround)
             {
+                jumpLeft = jumpNumber;
                 onGround = true;
                 if (isDamaged){
                     isDamaged = false;
