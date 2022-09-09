@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed;
     private int playerID = 0;
     [SerializeField] private float dashPower;
-    [SerializeField]private bool onGround = false;
+    public bool onGround = false;
     [SerializeField]private int jumpNumber = 2;
     private int jumpLeft;
 

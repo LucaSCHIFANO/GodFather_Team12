@@ -16,13 +16,15 @@ public class Mort : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D truc)
     {
-        if (truc.tag == "Player")
-        {
-            DeathScreen.SetActive(true);
-            death = true;
-            Time.timeScale = 0;
-        }
+        if (truc.tag == "Player") Death();
     }
+
+    public void Death()
+    {
+        DeathScreen.SetActive(true);
+        death = true;
+        Time.timeScale = 0;
+    } 
     private void Update()
     {
         if (death == true )
