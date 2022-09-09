@@ -2576,13 +2576,61 @@ MonoBehaviour:
     whereIsTheSpawn: 0
     timeBeforeNextSpawn: 2
   listWavesPhase2:
-  - listPattern: []
-    whereIsTheSpawn: 1
+  - listPattern:
+    - {fileID: -960123172769357752, guid: 7ad9175896306724c8c4851fa4c81cb7, type: 3}
+    - {fileID: -960123172769357752, guid: c505a87076c0574499fa11c9dd44e18f, type: 3}
+    - {fileID: -960123172769357752, guid: 8259e2f05ef4e9f438e498a6d15e910c, type: 3}
+    whereIsTheSpawn: 2
     timeBeforeNextSpawn: 3
-  listWavesPhase3:
-  - listPattern: []
+  - listPattern:
+    - {fileID: -960123172769357752, guid: f6b2f2663ad7fa54c89b957685828445, type: 3}
+    - {fileID: -960123172769357752, guid: 38a0b666b4211cf479287caa963ec5e5, type: 3}
     whereIsTheSpawn: 0
     timeBeforeNextSpawn: 3
+  - listPattern:
+    - {fileID: 5364096165714790800, guid: bb1f212139604ab4ebc1e35690597573, type: 3}
+    - {fileID: 5364096165714790800, guid: 0c73b2e3051eabb42b61d4c7195c92bd, type: 3}
+    - {fileID: 5364096165714790800, guid: e029fbe12de00444c94d9d3c61c3d20e, type: 3}
+    - {fileID: 5364096165714790800, guid: 3d743f863e69473488d68d09ec9beab0, type: 3}
+    whereIsTheSpawn: 0
+    timeBeforeNextSpawn: 3
+  listWavesPhase3:
+  - listPattern:
+    - {fileID: 5317478696985487966, guid: c5a57be1301f5f6478512965a20e743f, type: 3}
+    whereIsTheSpawn: 0
+    timeBeforeNextSpawn: 0.5
+  - listPattern:
+    - {fileID: -960123172769357752, guid: c890e9c35efd9aa4d8696668b4555698, type: 3}
+    whereIsTheSpawn: 1
+    timeBeforeNextSpawn: 2
+  - listPattern:
+    - {fileID: 8002806149076174753, guid: 3375603709e18d049bdac2e5d66735ea, type: 3}
+    whereIsTheSpawn: 0
+    timeBeforeNextSpawn: 5
+  - listPattern:
+    - {fileID: -529491007913077350, guid: eab3a1f1db07d2c48a41dd6bc2fd65b0, type: 3}
+    whereIsTheSpawn: 0
+    timeBeforeNextSpawn: 1
+  - listPattern:
+    - {fileID: 942488412592561521, guid: 5a18eadf8a00c4c4d9d6974ff31a58a9, type: 3}
+    whereIsTheSpawn: 0
+    timeBeforeNextSpawn: 1
+  - listPattern:
+    - {fileID: -960123172769357752, guid: 00474c92672a65747a4f6004387d048c, type: 3}
+    whereIsTheSpawn: 2
+    timeBeforeNextSpawn: 3
+  - listPattern:
+    - {fileID: 5855779119642697863, guid: 5cb6c52802d2efc488ac78804a8c38db, type: 3}
+    whereIsTheSpawn: 1
+    timeBeforeNextSpawn: 5
+  - listPattern:
+    - {fileID: 5317478696985487966, guid: 29d607c89451bf248af2c186ab6fbbf9, type: 3}
+    whereIsTheSpawn: 0
+    timeBeforeNextSpawn: 4
+  - listPattern:
+    - {fileID: -960123172769357752, guid: 00474c92672a65747a4f6004387d048c, type: 3}
+    whereIsTheSpawn: 2
+    timeBeforeNextSpawn: 2
 --- !u!4 &1803688389
 Transform:
   m_ObjectHideFlags: 0
