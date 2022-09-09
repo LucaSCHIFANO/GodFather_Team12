@@ -126,20 +126,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 6478964861161550316}
   col: {fileID: 6478964861161550315}
-  jumpForce: 250
-  jumpForceWhenDragonGoUp: 375
-  speed: 3
-  dashPower: 3
+  jumpForce: 5000
+  jumpForceWhenDragonGoUp: 7000
+  speed: 7
+  dashPower: 5
   onGround: 0
   jumpNumber: 2
   dashingTime: 0.2
-  dashingCooldown: 0.5
+  dashingCooldown: 0.3
   bounceBackForce: 20
   currentParent: {fileID: 0}
   currentDragMove: {fileID: 0}
   gameOver: {fileID: 0}
   normalGrav: 5
-  jumpGrav: 1
+  jumpGrav: 3.5
   LeftCC: {fileID: 5740065070663437806}
   RightCC: {fileID: 2807492185500124164}
 --- !u!50 &6478964861161550316
@@ -154,10 +154,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 6200000, guid: 01f2e710f5c3ae147b0b0149c389253b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
