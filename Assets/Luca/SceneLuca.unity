@@ -563,6 +563,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArrowPattern (0) 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6120445895920056096, guid: c49e49b36fdef9b4fa086af51e1c0c54, type: 3}
+      propertyPath: speedV
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c49e49b36fdef9b4fa086af51e1c0c54, type: 3}
 --- !u!1 &386487657
@@ -3987,6 +3991,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArrowPattern (0) 1 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6895827689901271283, guid: 2784a75a56992684c83e7fbfdd4759fb, type: 3}
+      propertyPath: speedV
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2784a75a56992684c83e7fbfdd4759fb, type: 3}
 --- !u!1 &1709383544
@@ -4689,6 +4697,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArrowPattern (0) 1 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6895827689901271283, guid: 2784a75a56992684c83e7fbfdd4759fb, type: 3}
+      propertyPath: speedV
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2784a75a56992684c83e7fbfdd4759fb, type: 3}
 --- !u!1 &1933643249
@@ -4943,6 +4955,10 @@ PrefabInstance:
     - target: {fileID: 4731477419108712214, guid: c49e49b36fdef9b4fa086af51e1c0c54, type: 3}
       propertyPath: m_Name
       value: ArrowPattern (0) 2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6120445895920056096, guid: c49e49b36fdef9b4fa086af51e1c0c54, type: 3}
+      propertyPath: speedV
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c49e49b36fdef9b4fa086af51e1c0c54, type: 3}
@@ -5931,6 +5947,10 @@ PrefabInstance:
       propertyPath: gameOver
       value: 
       objectReference: {fileID: 843759602}
+    - target: {fileID: 6478964861161550317, guid: 283b030a95831504e84974fd2df3fbdd, type: 3}
+      propertyPath: jumpGrav
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6478964861161550317, guid: 283b030a95831504e84974fd2df3fbdd, type: 3}
       propertyPath: currentDragMove
       value: 
