@@ -11,11 +11,7 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField] private Animator fadeOut;
 
-    
-    // private void Awake()
-    // {
-    //     Screen.SetResolution(256,244, false);
-    // }
+
     private void Start()
     {
         controller.setManager(this);
