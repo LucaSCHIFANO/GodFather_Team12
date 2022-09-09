@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7611045504895881747}
   - component: {fileID: 7611045504895881744}
+  - component: {fileID: 1472287892511269106}
   - component: {fileID: 7611045504895881745}
   - component: {fileID: 7611045504895881750}
   - component: {fileID: 7611045504895881751}
@@ -61,11 +62,26 @@ MonoBehaviour:
   bounceBackForce: 20
   currentParent: {fileID: 0}
   currentDragMove: {fileID: 0}
-  Mort: {fileID: 0}
+  gameOver: {fileID: 0}
   normalGrav: 5
   jumpGrav: 3
   LeftCC: {fileID: 0}
   RightCC: {fileID: 0}
+--- !u!114 &1472287892511269106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7611045504895881749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 888febf5ea966e74d8fa4c410b4aafb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PointText: {fileID: 0}
+  score: 0
+  effect: {fileID: 0}
 --- !u!50 &7611045504895881745
 Rigidbody2D:
   serializedVersion: 4
