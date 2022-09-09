@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2460734290514493739}
   m_Layer: 6
   m_Name: Grass
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 771389519928841616}
   m_Layer: 6
   m_Name: TestMur 1 2 2 1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -419,7 +419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 483db9848f783ac45ac5a138bce8ba8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedH: 5
+  speedH: 3
   speedV: 0
   timeBeforeDelete: 10000000
 --- !u!50 &771389519928841616
