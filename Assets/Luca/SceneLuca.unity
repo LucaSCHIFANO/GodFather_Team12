@@ -1535,6 +1535,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e11a659288a997b40bbbdcd6588ba2e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeathScreen: {fileID: 843759600}
+  Chrono: 0
 --- !u!114 &843759603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3067,7 +3069,7 @@ MonoBehaviour:
   bounceBackForce: 0
   currentParent: {fileID: 0}
   currentDragMove: {fileID: 1112968023}
-  Mort: {fileID: 1796707139}
+  gameOver: {fileID: 0}
   normalGrav: 0
   jumpGrav: 0
   LeftCC: {fileID: 0}
@@ -4176,15 +4178,121 @@ MonoBehaviour:
   timeBeforeBegin: 3
   listWavesPhase1:
   - listPattern:
-    - {fileID: 4287586810379513292, guid: 17e34d3573f5f0148a9656103b4de9bd, type: 3}
+    - {fileID: 7977914439449301195, guid: 2e0359a66c6a0f24f89ffcde9229df02, type: 3}
     whereIsTheSpawn: 0
-    timeBeforeNextSpawn: 5
+    timeBeforeNextSpawn: 3
+  - listPattern:
+    - {fileID: 3709102064733669907, guid: 440327bddfdedf54d9a6b7ef1d8873f9, type: 3}
+    whereIsTheSpawn: 0
+    timeBeforeNextSpawn: 3
+  - listPattern:
+    - {fileID: 7251718941059247133, guid: 91860c57972d13d47a3bacf51f6c647b, type: 3}
+    whereIsTheSpawn: 0
+    timeBeforeNextSpawn: 3
+  - listPattern:
+    - {fileID: 872551217892421375, guid: c42faf6ce61164c428db039ffe7c42b4, type: 3}
+    whereIsTheSpawn: 0
+    timeBeforeNextSpawn: 2
+  - listPattern:
+    - {fileID: 0}
+    whereIsTheSpawn: 1
+    timeBeforeNextSpawn: 3
+  - listPattern:
+    - {fileID: 0}
+    whereIsTheSpawn: 1
+    timeBeforeNextSpawn: 3
+  - listPattern:
+    - {fileID: 0}
+    whereIsTheSpawn: 1
+    timeBeforeNextSpawn: 3
+  - listPattern:
+    - {fileID: 0}
+    whereIsTheSpawn: 1
+    timeBeforeNextSpawn: 4
+  - listPattern:
+    - {fileID: 7368986287015562484, guid: a312901967f78e94199b53592cd966d9, type: 3}
+    whereIsTheSpawn: 0
+    timeBeforeNextSpawn: 3
+  - listPattern:
+    - {fileID: 660809884966974718, guid: 196029a7f6fe8b34385747b6d0844139, type: 3}
+    whereIsTheSpawn: 0
+    timeBeforeNextSpawn: 3
+  - listPattern:
+    - {fileID: 7811523489715636401, guid: a626082c9f589f741a5f8dbda28d06fe, type: 3}
+    whereIsTheSpawn: 0
+    timeBeforeNextSpawn: 2
+  - listPattern:
+    - {fileID: 446957609151598654, guid: 4d2dd52bfbad86f4bb9e0f4e6fec676d, type: 3}
+    whereIsTheSpawn: 0
+    timeBeforeNextSpawn: 2
+  - listPattern:
+    - {fileID: 4807110133694879443, guid: 907121969774f504aa9cdb3419adac58, type: 3}
+    whereIsTheSpawn: 0
+    timeBeforeNextSpawn: 2
+  - listPattern:
+    - {fileID: 2949632294686089372, guid: aca2247ff2eb7334d83f539e0dffa632, type: 3}
+    whereIsTheSpawn: 0
+    timeBeforeNextSpawn: 4
+  - listPattern:
+    - {fileID: 2949632294686089372, guid: aca2247ff2eb7334d83f539e0dffa632, type: 3}
+    whereIsTheSpawn: 0
+    timeBeforeNextSpawn: 2
+  listWavesPhase2:
+  - listPattern:
+    - {fileID: -960123172769357752, guid: 7ad9175896306724c8c4851fa4c81cb7, type: 3}
+    - {fileID: -960123172769357752, guid: c505a87076c0574499fa11c9dd44e18f, type: 3}
+    - {fileID: -960123172769357752, guid: 8259e2f05ef4e9f438e498a6d15e910c, type: 3}
+    whereIsTheSpawn: 2
+    timeBeforeNextSpawn: 3
+  - listPattern:
+    - {fileID: -960123172769357752, guid: f6b2f2663ad7fa54c89b957685828445, type: 3}
+    - {fileID: -960123172769357752, guid: 38a0b666b4211cf479287caa963ec5e5, type: 3}
+    whereIsTheSpawn: 0
+    timeBeforeNextSpawn: 3
+  - listPattern:
+    - {fileID: 5364096165714790800, guid: bb1f212139604ab4ebc1e35690597573, type: 3}
+    - {fileID: 5364096165714790800, guid: 0c73b2e3051eabb42b61d4c7195c92bd, type: 3}
+    - {fileID: 5364096165714790800, guid: e029fbe12de00444c94d9d3c61c3d20e, type: 3}
+    - {fileID: 5364096165714790800, guid: 3d743f863e69473488d68d09ec9beab0, type: 3}
+    whereIsTheSpawn: 0
+    timeBeforeNextSpawn: 3
+  listWavesPhase3:
+  - listPattern:
+    - {fileID: 5317478696985487966, guid: c5a57be1301f5f6478512965a20e743f, type: 3}
+    whereIsTheSpawn: 0
+    timeBeforeNextSpawn: 0.5
   - listPattern:
     - {fileID: -960123172769357752, guid: c890e9c35efd9aa4d8696668b4555698, type: 3}
     whereIsTheSpawn: 1
+    timeBeforeNextSpawn: 2
+  - listPattern:
+    - {fileID: 8002806149076174753, guid: 3375603709e18d049bdac2e5d66735ea, type: 3}
+    whereIsTheSpawn: 0
     timeBeforeNextSpawn: 5
-  listWavesPhase2: []
-  listWavesPhase3: []
+  - listPattern:
+    - {fileID: -529491007913077350, guid: eab3a1f1db07d2c48a41dd6bc2fd65b0, type: 3}
+    whereIsTheSpawn: 0
+    timeBeforeNextSpawn: 1
+  - listPattern:
+    - {fileID: 942488412592561521, guid: 5a18eadf8a00c4c4d9d6974ff31a58a9, type: 3}
+    whereIsTheSpawn: 0
+    timeBeforeNextSpawn: 1
+  - listPattern:
+    - {fileID: -960123172769357752, guid: 00474c92672a65747a4f6004387d048c, type: 3}
+    whereIsTheSpawn: 2
+    timeBeforeNextSpawn: 3
+  - listPattern:
+    - {fileID: 5855779119642697863, guid: 5cb6c52802d2efc488ac78804a8c38db, type: 3}
+    whereIsTheSpawn: 1
+    timeBeforeNextSpawn: 5
+  - listPattern:
+    - {fileID: 5317478696985487966, guid: 29d607c89451bf248af2c186ab6fbbf9, type: 3}
+    whereIsTheSpawn: 0
+    timeBeforeNextSpawn: 4
+  - listPattern:
+    - {fileID: -960123172769357752, guid: 00474c92672a65747a4f6004387d048c, type: 3}
+    whereIsTheSpawn: 2
+    timeBeforeNextSpawn: 2
 --- !u!4 &1803688389
 Transform:
   m_ObjectHideFlags: 0
@@ -5278,6 +5386,10 @@ PrefabInstance:
       propertyPath: Mort
       value: 
       objectReference: {fileID: 1796707139}
+    - target: {fileID: 6478964861161550317, guid: 283b030a95831504e84974fd2df3fbdd, type: 3}
+      propertyPath: gameOver
+      value: 
+      objectReference: {fileID: 843759602}
     - target: {fileID: 6478964861161550317, guid: 283b030a95831504e84974fd2df3fbdd, type: 3}
       propertyPath: currentDragMove
       value: 
