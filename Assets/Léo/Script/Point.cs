@@ -24,7 +24,14 @@ public class Point : MonoBehaviour
     {
         if (truc.tag == "Coin")
         {
-            score++;
+            score+=100;
+            PointText.text = score.ToString();
+            Destroy(truc.gameObject);
+            Instantiate(effect, truc.transform.position, Quaternion.identity);
+        }
+        if (truc.tag == "Neko")
+        {
+            score += 5000;
             PointText.text = score.ToString();
             Destroy(truc.gameObject);
             Instantiate(effect, truc.transform.position, Quaternion.identity);

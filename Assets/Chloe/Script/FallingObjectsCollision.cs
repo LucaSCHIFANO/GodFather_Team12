@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FallingObjectsCollision : MonoBehaviour
 {
-    
+    [SerializeField] private GameObject deathObject;
     void Start()
     {
         
@@ -18,9 +18,14 @@ public class FallingObjectsCollision : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider){
 
         
-        if (collider.gameObject.tag == "Player"){   
-            Destroy(gameObject);
+        if (collider.gameObject.tag == "Player")
+        {
+
+            if (deathObject != null) Instantiate(deathObject, transform.position, transform.rotation);
+            
             collider.GetComponent<PlayerController>().BounceBack();
+            Destroy(gameObject);
+            
         }
     }
 }

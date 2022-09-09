@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 1
+  deathObject: {fileID: 7228753267481969637, guid: 0780db5d85c9e4e4199d033f4c2260c1, type: 3}
 --- !u!1 &2135490566008932242
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +137,7 @@ GameObject:
   - component: {fileID: 1141572808991013297}
   m_Layer: 0
   m_Name: BlockBreakable
-  m_TagString: BreakableWall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

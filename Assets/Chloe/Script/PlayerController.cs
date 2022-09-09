@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float normalGrav;
     [SerializeField] private float jumpGrav;
+    [SerializeField] private BoxCollider2D LeftCC;
+    [SerializeField] private BoxCollider2D RightCC;
 
     private void Awake()
     {
@@ -116,6 +118,11 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+        //
+        // if (col.gameObject.tag == "BreakableWall" && isDashing)
+        // {
+        //    col.gameObject.GetComponent<HPBlock>().removeHP(10f); 
+        // }
     }
 
     private void OnCollisionStay2D(Collision2D col){
@@ -131,6 +138,10 @@ public class PlayerController : MonoBehaviour
         anim.Play("Human_Dash");
         canDash = false;
         isDashing = true;
+        
+        if(lastDirection > 0) RightCC.gameObject.SetActive(true);
+        else LeftCC.gameObject.SetActive(true);
+        
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
         rb.velocity = new Vector2(transform.localScale.x * dashPower * lastDirection, 0f);
@@ -138,6 +149,10 @@ public class PlayerController : MonoBehaviour
         rb.gravityScale = originalGravity;
         isDashing = false;
         anim.Play("Human_Fall");
+        
+        RightCC.gameObject.SetActive(false);
+        LeftCC.gameObject.SetActive(false);
+        
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }
