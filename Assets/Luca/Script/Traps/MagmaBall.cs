@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MagmaBall : MonoBehaviour
 {
-    [SerializeField] private Transform maxHeight;
+    public Transform maxHeight;
     private bool goDown;
     private Rigidbody2D rb;
 
@@ -29,6 +29,10 @@ public class MagmaBall : MonoBehaviour
         currentSpeed = Mathf.Clamp(currentSpeed, -maxSpeed, maxSpeed);
         rb.velocity = new Vector2(rb.velocity.x, currentSpeed);
 
-        if (transform.position.y >= maxHeight.position.y) goDown = true;
+        if (transform.position.y >= maxHeight.position.y)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+            goDown = true;
+        }
     }
 }

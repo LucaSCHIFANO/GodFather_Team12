@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
     private int playerID = 0;
     [SerializeField] private float dashPower;
     [SerializeField]private bool onGround = false;
+    [SerializeField]private int jumpNumber = 2;
+    private int jumpLeft;
+
     private int lastDirection = 1; // 1 = droite, -1 = gauche
     private bool isDashing = false;
     [SerializeField] private float dashingTime = 0.2f;
@@ -34,17 +37,19 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float normalGrav;
     [SerializeField] private float jumpGrav;
+    [SerializeField] private BoxCollider2D LeftCC;
+    [SerializeField] private BoxCollider2D RightCC;
 
     private void Awake()
     {
         player = ReInput.players.GetPlayer(playerID);
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+        jumpLeft = jumpNumber;
     }
 
     private void Update()
     {
-
         if (isDashing || isDamaged){
             return;
         }
@@ -64,8 +69,9 @@ public class PlayerController : MonoBehaviour
         } 
         rb.velocity = new Vector2(moveHorizontal,rb.velocity.y);
 
-        if (player.GetButtonDown("Jump") && onGround)
+        if (player.GetButtonDown("Jump") && jumpLeft > 0)
         {
+            jumpLeft -= 1;
             rb.gravityScale = jumpGrav;
             
             if (!currentDragMove.retour) rb.AddForce(Vector2.up * (jumpForceWhenDragonGoUp));
@@ -110,12 +116,18 @@ public class PlayerController : MonoBehaviour
             
             if (!onGround)
             {
+                jumpLeft = jumpNumber;
                 onGround = true;
                 if (isDamaged){
                     isDamaged = false;
                 }
             }
         }
+        //
+        // if (col.gameObject.tag == "BreakableWall" && isDashing)
+        // {
+        //    col.gameObject.GetComponent<HPBlock>().removeHP(10f); 
+        // }
     }
 
     private void OnCollisionStay2D(Collision2D col){
@@ -131,6 +143,10 @@ public class PlayerController : MonoBehaviour
         anim.Play("Human_Dash");
         canDash = false;
         isDashing = true;
+        
+        if(lastDirection > 0) RightCC.gameObject.SetActive(true);
+        else LeftCC.gameObject.SetActive(true);
+        
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
         rb.velocity = new Vector2(transform.localScale.x * dashPower * lastDirection, 0f);
@@ -138,6 +154,10 @@ public class PlayerController : MonoBehaviour
         rb.gravityScale = originalGravity;
         isDashing = false;
         anim.Play("Human_Fall");
+        
+        RightCC.gameObject.SetActive(false);
+        LeftCC.gameObject.SetActive(false);
+        
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }

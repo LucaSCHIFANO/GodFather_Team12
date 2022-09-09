@@ -10,6 +10,7 @@ public class WavesManager : MonoBehaviour
     [SerializeField] private Transform spawnRight;
     [SerializeField] private Transform spawnUp;
     [SerializeField] private Transform spawnDown;
+    [SerializeField] private Transform levelMagmaBall;
     private Waves currentWaves;
     private int wavesCount;
     
@@ -96,10 +97,14 @@ public class WavesManager : MonoBehaviour
                 break;
             
             case Waves.position.DOWN :
-                //currentSpawn = spawnDown;
+                for (int i = 0; i < spawned.transform.childCount; i++)
+                {
+                    spawned.transform.GetChild(i).GetComponent<MagmaBall>().maxHeight = levelMagmaBall;
+                }
+                
                 break;
         }
-        
+
         
 
         StartCoroutine(LaunchNextWaves());

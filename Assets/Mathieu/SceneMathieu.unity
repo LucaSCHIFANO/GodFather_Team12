@@ -2398,7 +2398,7 @@ MonoBehaviour:
   timeBeforeBegin: 4
   listWavesPhase1:
   - listPattern:
-    - {fileID: -960123172769357752, guid: 938f2ede26ee9e14984163d526aa80d6, type: 3}
+    - {fileID: 5364096165714790800, guid: bb1f212139604ab4ebc1e35690597573, type: 3}
     whereIsTheSpawn: 0
     timeBeforeNextSpawn: 2
   - listPattern: []
@@ -2567,6 +2567,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4042138405016598112, guid: f8b11476c2af6ea4195fa93704ee9b88, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4042138405016598113, guid: f8b11476c2af6ea4195fa93704ee9b88, type: 3}
       propertyPath: m_Name
       value: Dragon
