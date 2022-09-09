@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed;
     private int playerID = 0;
     [SerializeField] private float dashPower;
-    [SerializeField]private bool onGround = false;
+    [SerializeField]public bool onGround = false;
     [SerializeField]private int jumpNumber = 2;
     private int jumpLeft;
 
@@ -118,29 +118,12 @@ public class PlayerController : MonoBehaviour
 
             if (rb.velocity.y <= 0) rb.gravityScale = normalGrav;
             
-            if (!onGround)
+            if (!onGround && col.transform.position.y < transform.position.y)
             {
                 jumpLeft = jumpNumber;
                 onGround = true;
-                //if (isDamaged){
-                //    isDamaged = false;
-                //}
             }
         }
-        //
-        // if (col.gameObject.tag == "BreakableWall" && isDashing)
-        // {
-        //    col.gameObject.GetComponent<HPBlock>().removeHP(10f); 
-        // }
-    }
-
-    private void OnCollisionStay2D(Collision2D col){
-        //if (col.gameObject.tag == "Ground")
-        //{
-        //    if (isDamaged){
-        //        isDamaged = false;
-        //    }
-        //}
     }
 
     private IEnumerator Dash(){
