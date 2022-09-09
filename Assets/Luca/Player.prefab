@@ -134,10 +134,12 @@ MonoBehaviour:
   jumpNumber: 2
   dashingTime: 0.2
   dashingCooldown: 0.3
-  bounceBackForce: 20
+  bounceBackForceleft: 50
+  bounceBackForceup: 75
+  bounceBackTime: 1
   currentParent: {fileID: 0}
   currentDragMove: {fileID: 0}
-  gameOver: {fileID: 0}
+  Mort: {fileID: 0}
   normalGrav: 5
   jumpGrav: 3.5
   LeftCC: {fileID: 5740065070663437806}

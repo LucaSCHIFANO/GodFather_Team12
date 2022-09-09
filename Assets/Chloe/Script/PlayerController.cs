@@ -74,7 +74,6 @@ public class PlayerController : MonoBehaviour
 
         if (player.GetButtonDown("Jump") && jumpLeft > 0)
         {
-            Debug.LogError("Jump");
             jumpLeft -= 1;
             rb.gravityScale = jumpGrav;
             
