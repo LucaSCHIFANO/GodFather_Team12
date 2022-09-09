@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,13 @@ public class Point : MonoBehaviour
     public int score;
 
     public GameObject effect;
+    
+    private SoundTransmitter st;
+
+    private void Awake()
+    {
+        st = GetComponent<SoundTransmitter>();
+    }
 
     void Start()
     {
@@ -27,14 +35,16 @@ public class Point : MonoBehaviour
             score+=100;
             PointText.text = score.ToString();
             Destroy(truc.gameObject);
-            Instantiate(effect, truc.transform.position, Quaternion.identity);
+            //Instantiate(effect, truc.transform.position, Quaternion.identity);
+            st.Play("Coin");
         }
         if (truc.tag == "Neko")
         {
             score += 5000;
             PointText.text = score.ToString();
             Destroy(truc.gameObject);
-            Instantiate(effect, truc.transform.position, Quaternion.identity);
+            //Instantiate(effect, truc.transform.position, Quaternion.identity);
+            st.Play("Neko");
         }
     }
     IEnumerator Score()

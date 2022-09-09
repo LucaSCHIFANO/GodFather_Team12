@@ -9,6 +9,9 @@ public class GameOverScreen : MonoBehaviour
     public GameObject DeathScreen;
     public bool Chrono;
 
+    public SoundTransmitter st;
+    private bool one;
+
     public void Start()
     {
         Chrono = false;
@@ -18,6 +21,12 @@ public class GameOverScreen : MonoBehaviour
         if (Time.timeScale == 0)
         {
             Chrono = true;
+            if (!one)
+            {
+                one = true;
+                st.Stop("Main");
+                st.Play("GO");
+            }
         }
     }
 

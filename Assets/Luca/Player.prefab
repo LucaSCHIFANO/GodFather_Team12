@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 6478964861161550314}
   - component: {fileID: 6478964861161550313}
   - component: {fileID: 1441184433}
+  - component: {fileID: 3246142283030659153}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -136,7 +137,7 @@ MonoBehaviour:
   bounceBackForce: 20
   currentParent: {fileID: 0}
   currentDragMove: {fileID: 0}
-  Mort: {fileID: 0}
+  gameOver: {fileID: 0}
   normalGrav: 5
   jumpGrav: 1
   LeftCC: {fileID: 5740065070663437806}
@@ -295,6 +296,21 @@ MonoBehaviour:
     playOnAwake: 0
     loop: 0
     source: {fileID: 0}
+--- !u!114 &3246142283030659153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6478964861161550312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 888febf5ea966e74d8fa4c410b4aafb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PointText: {fileID: 0}
+  score: 0
+  effect: {fileID: 0}
 --- !u!1 &8367465926376535802
 GameObject:
   m_ObjectHideFlags: 0
