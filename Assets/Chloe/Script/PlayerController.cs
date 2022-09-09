@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     public GameObject currentParent;
     public drag_move currentDragMove;
 
-    public Mort Mort;
+    public GameOverScreen gameOver;
 
     private Animator anim;
     private SpriteRenderer sr;
@@ -89,12 +89,12 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(Dash());
         }
         
-        if(Mort.dcd == true && player.GetButtonDown("Start"))
+        if(gameOver.Chrono == true && player.GetButtonDown("Start"))
         {
             Time.timeScale = 1;
             SceneManager.LoadScene("SceneLuca");
         }
-        if (Mort.dcd == true && player.GetButtonDown("Select"))
+        if (gameOver.Chrono == true && player.GetButtonDown("Select"))
         {
             Time.timeScale = 1;
             SceneManager.LoadScene("TitleScreen");
